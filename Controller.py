@@ -16,7 +16,6 @@ class Controller:
         self.__payment_list = ["OnlineBanking", "Debit Card", "TrueMoney Wallet"]
         self.__promotion_list = []
         self.__report_type_list = ["violence", "harrasment"]
-    
     #>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Sub Methods <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
     # ____________________________________Getters___________________________________
     

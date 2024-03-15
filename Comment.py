@@ -6,8 +6,6 @@ class Comment:
         self.__context = context
         self.__date_time = datetime.now()
         self.__chapter = chapter
-        self.__report_list = []
-        self.__reply_list = []
 
     @property
     def commentator(self):
@@ -32,20 +30,6 @@ class Comment:
     @property
     def report_list(self):
         return self.__report_list
-
-    @property
-    def reply_list(self):
-        return self.__reply_list
-
-    def add_reply_list(self, reply):
-        self.__reply_list.append(reply)
-
-    def delete_reply_list(self, reply):
-        if reply in self.__reply_list:
-            self.__reply_list.remove(reply)
-            print(f"Reply is deleted from the list")
-        else:
-            print(f"Reply is not found in the list")
 
     def update_time(self):
         self.__date_time = datetime.now()

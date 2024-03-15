@@ -139,6 +139,7 @@ class Book:
             for report in self.__report_list:
                 if report_count == 10:
                     self.status = "hiding"
+                    break
                 elif report.report_type == report_type:
                     report_count += 1
                     print("report_count",report_count)
@@ -170,6 +171,7 @@ class Book:
                     "age_retricted" : self.show_age_restricted(),
                     "chapter_count" : self.chapter_count,
                     "reports" : self.show_report_list(),
+                    "chapter" : self.show_chapter_list(),
                     "comments" : self.show_comment_list(),
                     "writer_name": self.__writer.username,
                     "date_time": self.date_time_str,

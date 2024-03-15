@@ -130,6 +130,8 @@ write_a_read.add_promotion(BookPromotion("15/03/2024", 10, [book_for_promotion])
 #add coin transac
 Mo.add_coin_transaction_list(CoinTransaction(OnlineBanking("0123456789"), 500, "+500", "+50", "20/02/2024, 15:23:10"))
 Mo.add_coin_transaction_list(CoinTransaction(TrueMoneyWallet("0989899889"), 500, "+500", "+50", "20/02/2024, 15:23:10"))
+
+write_a_read.buy_coin("Mozaza","OnlineBanking","1",None, 10000)
 # ____________________________________FastAPI___________________________________
 # _________________________________________________ GET _________________________________________________
 
@@ -231,7 +233,7 @@ class dto_create_report(BaseModel):
      context: str
      
 @app.post("/report/{book_name}", tags=['report'])
-def CreateReport(dto : dto_create_report):
+def create_report(dto : dto_create_report):
      return write_a_read.create_report(dto.book_name, dto.username, dto.report_type, dto.context)
      
 #..........................................................................................................
@@ -292,7 +294,7 @@ class dto_create_comment(BaseModel):
      context : str
      
 @app.post("/comment/{chapter_id}", tags=['Comment'])
-def CreateComment(dto: dto_create_comment):
+def create_comment(dto: dto_create_comment):
      return write_a_read.create_comment(dto.chapter_id, dto.username, dto.context)
      
 #..........................................................................................................
@@ -352,7 +354,7 @@ class dto_add_book_shelf(BaseModel):
      book_name :str
 
 @app.put("/book_shelf/add")
-def AddBookShelf(dto : dto_add_book_shelf):
+def add_book_shelf(dto : dto_add_book_shelf):
      return {"book shelf" : write_a_read.add_book_list(dto.username, dto.book_name)}
      
 #........................................................................................................................
@@ -386,3 +388,4 @@ class dto_edit_introduction(BaseModel):
 @app.put("/my_page/edit_introduction", tags=["My Page"])
 def edit_introduction(dto : dto_edit_introduction):
      return write_a_read.edit_introduction(dto.username, dto.text)
+
