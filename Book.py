@@ -169,6 +169,7 @@ class Book:
                     "prologue" : self.prologue,
                     "age_retricted" : self.show_age_restricted(),
                     "chapter_count" : self.chapter_count,
+                    "reports" : self.show_report_list(),
                     "comments" : self.show_comment_list(),
                     "writer_name": self.__writer.username,
                     "date_time": self.date_time_str,
